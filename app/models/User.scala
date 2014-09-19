@@ -3,6 +3,9 @@ package models
 //import org.joda.time.DateTime
 import java.util.Date
 
+import scala.concurrent.Future
+import scala.concurrent.ExecutionContext.Implicits.global
+
 case class User(
   id: Option[Long],
   email: String,
@@ -59,6 +62,14 @@ object User {
     //
     // For now return a fake user
     Some(User(Some(3L), email, password, "John Smith", None))
+  }
+
+  def findAsync(id: Long): Future[Option[User]] = Future {
+    if (id == 3) {
+      Some(User(Some(3L), "test@test.com", "mypassword", "John Smith", None))
+    } else {
+      None
+    }
   }
 
 }

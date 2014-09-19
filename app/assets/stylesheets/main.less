@@ -23,6 +23,42 @@ body {
   }
 }
 
+.list-group {
+  margin-bottom: 10px;
+
+  .list-group-item {
+    &.ng-enter {
+      -webkit-animation: fadeInDown .2s;
+      -moz-animation: fadeInDown .2s;
+      animation: fadeInDown .2s;
+    }
+    
+    &.ng-leave {
+      -webkit-animation: fadeOutDown .2s;
+      -moz-animation: fadeOutDown .2s;
+      animation: fadeOutDown .2s;
+    }
+  }
+}
+
+.project {
+  .editable-wrap {
+    display: block;
+  }
+  .editable-click {
+    color: black;
+    border: 0;
+  }
+  .editable-click.panel-title {
+    color: white;
+  }
+
+  .editable-input.editable-has-buttons {
+    width: 60em;
+  }
+}
+
+
 /* AngularJS */
 [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
   display: none;

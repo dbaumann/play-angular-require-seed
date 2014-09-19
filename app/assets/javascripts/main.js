@@ -5,7 +5,7 @@
   // -- RequireJS config --
   requirejs.config({
     // Packages = top-level folders; loads a contained file named 'main.js"
-    packages: ['common', 'home', 'user', 'dashboard'],
+    packages: ['common', 'home', 'user', 'dashboard', 'task'],
     shim: {
       'jsRoutes': {
         deps: [],
@@ -19,6 +19,10 @@
       },
       'angular-route': ['angular'],
       'angular-cookies': ['angular'],
+      'angular-animate': ['angular'],
+      'angular-message-socket': ['angular'],
+      'angular-identity-map': ['angular'],
+      'angular-xeditable': ['angular'],
       'bootstrap': ['jquery']
     },
     paths: {
@@ -27,7 +31,12 @@
       'angular': ['../lib/angularjs/angular'],
       'angular-route': ['../lib/angularjs/angular-route'],
       'angular-cookies': ['../lib/angularjs/angular-cookies'],
+      'angular-animate': ['../lib/angular-animate'],
+      'angular-message-socket': ['../lib/angular-message-socket'],
+      'angular-identity-map': ['../lib/angular-identity-map'],
+      'angular-xeditable': ['../lib/angular-xeditable/js/xeditable'],
       'bootstrap': ['../lib/bootstrap/js/bootstrap'],
+      'moment': ['../lib/momentjs/moment'],
       'jsRoutes': ['/jsroutes']
     }
   });

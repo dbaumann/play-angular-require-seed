@@ -24,12 +24,22 @@ libraryDependencies ++= Seq(
   "org.webjars" % "underscorejs" % "1.6.0-3",
   "org.webjars" % "jquery" % "1.11.1",
   "org.webjars" % "bootstrap" % "3.1.1-2" exclude("org.webjars", "jquery"),
-  "org.webjars" % "angularjs" % "1.2.18" exclude("org.webjars", "jquery")
+  "org.webjars" % "angularjs" % "1.2.18" exclude("org.webjars", "jquery"),
+  "org.webjars" % "momentjs" % "2.8.3",
+  "org.webjars" % "angular-xeditable" % "0.1.8"
 )
+
+// macro dependencies
+libraryDependencies ++= Seq(
+  "org.julienrf" %% "play-json-variants" % "0.2",
+  "org.dbaumann" %% "abstract-case-class" % "0.1"
+)
+
+addCompilerPlugin("org.scalamacros" % "paradise" % "2.0.1" cross CrossVersion.full)
 
 // Scala Compiler Options
 scalacOptions in ThisBuild ++= Seq(
-  "-target:jvm-1.7",
+  // "-target:jvm-1.7",
   "-encoding", "UTF-8",
   "-deprecation", // warning and location for usages of deprecated APIs
   "-feature", // warning and location for usages of features that should be imported explicitly
