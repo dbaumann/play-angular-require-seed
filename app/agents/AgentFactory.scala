@@ -3,7 +3,7 @@ package agents
 import java.util.Date
 
 import scala.concurrent.duration._
-import collection.mutable.{HashMap, MultiMap, Set}
+import scala.collection.mutable.{HashMap, MultiMap, Set}
 
 import akka.actor._
 import akka.pattern.ask

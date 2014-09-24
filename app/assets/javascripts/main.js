@@ -21,7 +21,7 @@
       'angular-cookies': ['angular'],
       'angular-animate': ['angular'],
       'angular-message-socket': ['angular'],
-      'angular-identity-map': ['angular'],
+      'angular-identity-map': ['angular', 'traverse'],
       'angular-xeditable': ['angular'],
       'bootstrap': ['jquery']
     },
@@ -37,6 +37,7 @@
       'angular-xeditable': ['../lib/angular-xeditable/js/xeditable'],
       'bootstrap': ['../lib/bootstrap/js/bootstrap'],
       'moment': ['../lib/momentjs/moment'],
+      'traverse': ['../lib/traverse'],
       'jsRoutes': ['/jsroutes']
     }
   });
