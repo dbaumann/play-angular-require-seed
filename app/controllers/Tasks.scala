@@ -148,7 +148,7 @@ class TasksAgent(date: Date) extends Pubsub with Authors with ComposableActor wi
       withUser() { origin => user =>
         val index = projects.indexWhere(_.id == project.id)
         projects = projects.updated(index, project)
-        
+
         log.info("Broadcasting ProjectUpdateDone to {} clients", clients.size)
         broadcast(ProjectUpdateDone(user, stamp, project), origin)
       }

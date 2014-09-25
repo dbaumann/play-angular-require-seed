@@ -5,10 +5,11 @@ define (require) ->
   'use strict'
 
   traverse = require("traverse")
+  moment = require("moment")
 
   class TaskCtrl
-    @$inject = ["$scope", "$window", "$location", "initialState", "playRoutes", "MessageSocket", "Task", "Project"]
-    constructor: (@$scope, @$window, @$location, @initialState, @playRoutes, @MessageSocket, @Task, @Project) ->
+    @$inject = ["$scope", "$window", "$location", "initialState", "playRoutes", "MessageSocket", "IdentityMap", "Task", "Project"]
+    constructor: (@$scope, @$window, @$location, @initialState, @playRoutes, @MessageSocket, @IdentityMap, @Task, @Project) ->
       @$window.traverse = traverse
 
       @$scope.Project = @Project(@$scope)
@@ -32,11 +33,15 @@ define (require) ->
       @$scope.Task.openChannel()
 
       @$scope.nextDay = =>
+        @$scope.Messenger.close()
+        @IdentityMap.clear()
         date = @$scope.date.toDate()
         date.setDate(date.getDate() + 1)
         @$location.path("/tasks/" + moment(date).format("YYYY-MM-DD"))
 
       @$scope.previousDay = =>
+        @$scope.Messenger.close()
+        @IdentityMap.clear()
         date = @$scope.date.toDate()
         date.setDate(date.getDate() - 1)
         @$location.path("/tasks/" + moment(date).format("YYYY-MM-DD"))
