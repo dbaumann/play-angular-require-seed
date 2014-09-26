@@ -4,14 +4,11 @@ Task controllers.
 define (require) ->
   'use strict'
 
-  traverse = require("traverse")
   moment = require("moment")
 
   class TaskCtrl
     @$inject = ["$scope", "$window", "$location", "initialState", "playRoutes", "MessageSocket", "IdentityMap", "Task", "Project"]
     constructor: (@$scope, @$window, @$location, @initialState, @playRoutes, @MessageSocket, @IdentityMap, @Task, @Project) ->
-      @$window.traverse = traverse
-
       @$scope.Project = @Project(@$scope)
       @$scope.Task = @Task(@$scope)
 
